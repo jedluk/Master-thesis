@@ -61,8 +61,8 @@ calib.yaml
 # assets
 assets/*
 
-# ffmpeg
-ffmpeg.exe
+# unpacked during runtime
+utils/
 
 # artifacts
 ARTIFACTS/tessdata

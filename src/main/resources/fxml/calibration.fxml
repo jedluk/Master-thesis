@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CalibrationController">
+   <children>
+      <VBox maxHeight="350.0" prefHeight="350.0" styleClass="accent-color" stylesheets="@../assets/style.css">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="367.0" prefWidth="814.0" styleClass="dark-primary-color" stylesheets="@../assets/style.css">
+               <children>
+                  <HBox layoutX="208.0" layoutY="19.0" prefHeight="100.0" prefWidth="200.0" styleClass="light-primary-color" AnchorPane.rightAnchor="73.0" AnchorPane.topAnchor="19.0">
+                     <children>
+                        <ImageView fx:id="image" fitHeight="300.0" fitWidth="533.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                     <effect>
+                        <DropShadow spread="0.45" />
+                     </effect>
+                  </HBox>
+                  <JFXButton fx:id="PreviousButton" layoutX="764.0" layoutY="210.0" maxHeight="138.0" onAction="#PreviousPicture" prefHeight="52.0" prefWidth="29.0" style="-fx-background-radius: 10px;" styleClass="accent-color" text=" " AnchorPane.bottomAnchor="105.0">
+                     <effect>
+                        <BoxBlur />
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="PathLabel" layoutX="208.0" layoutY="319.0" text="Path">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="23.0" layoutY="2.0" prefHeight="323.0" prefWidth="175.0" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="2.0">
+                     <children>
+                        <JFXCheckBox fx:id="readySet" disable="true" prefHeight="25.0" prefWidth="140.0" text="Ready Set">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="12.0" top="20.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="setCalibratedCheckBox" disable="true" prefHeight="25.0" prefWidth="140.0" text="Calibrated Set">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="12.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <JFXCheckBox fx:id="scaleParametersCheckBox" onAction="#toggleScaleParameters" text="Scale parameters">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="12.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <JFXTextField fx:id="scaleFactor" disable="true" focusColor="#8bc34a" prefHeight="25.0" prefWidth="37.0" promptText="Scale factor (0-1)">
+                           <VBox.margin>
+                              <Insets left="30.0" right="30.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXCheckBox fx:id="saveParam" maxWidth="140.0" minHeight="60.0" prefHeight="60.0" prefWidth="140.0" text="Save calibration&#10;parmeters">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="12.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <JFXButton fx:id="loadSetButton" minHeight="70.0" onAction="#loadSet" prefHeight="70.0" prefWidth="141.0" styleClass="default-primary-color" text="LOAD SET">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="12.0" left="17.0" right="17.0" top="10.0" />
+                           </VBox.margin>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton fx:id="calibrateButton" minHeight="35.0" onAction="#calibrateSet" prefHeight="35.0" prefWidth="146.0" styleClass="default-primary-color" text="CALIBRATE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="17.0" right="17.0" top="10.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <Label fx:id="calibFilePath" alignment="CENTER" layoutY="346.0" prefHeight="15.0" prefWidth="115.0" text="Parameter sheet: " AnchorPane.leftAnchor="0.0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="nextButton" layoutX="764.0" layoutY="78.0" maxHeight="190.0" maxWidth="271.0" onAction="#nextPicture" prefHeight="52.0" prefWidth="29.0" style="-fx-background-radius: 10px;" styleClass="accent-color" text=" ">
+                     <effect>
+                        <BoxBlur />
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

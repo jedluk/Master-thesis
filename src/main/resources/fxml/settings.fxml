@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="734.0" prefWidth="422.0" styleClass="default-primary-color" stylesheets="@../assets/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="734.0" prefWidth="422.0" style="-fx-background-radius: 20px;" styleClass="accent-color" stylesheets="@../assets/style.css">
+         <children>
+            <HBox fx:id="settingsHBox" prefHeight="25.0" prefWidth="413.0" style="-fx-background-radius: 10px;" styleClass="default-primary-color">
+               <children>
+                  <JFXButton fx:id="aboutMeButton" styleClass="accent-color" text=" ">
+                     <HBox.margin>
+                        <Insets bottom="25.0" left="40.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="calibrationButton" styleClass="accent-color" text=" ">
+                     <HBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="templatesButton" styleClass="accent-color" text=" ">
+                     <HBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="algorithmButton" styleClass="accent-color" text=" ">
+                     <HBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="loadMovieButton" styleClass="accent-color" text=" ">
+                     <HBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <effect>
+                  <DropShadow spread="0.3" />
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="parametersBox" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox fx:id="parametersVBox" prefHeight="163.0" prefWidth="420.0" style="-fx-background-radius: 10px;" styleClass="default-primary-color">
+                     <children>
+                        <JFXCheckBox fx:id="cameraCalibratedCheckBox" disable="true" text="Camera calibrated" />
+                        <Label fx:id="parameterSheetLabel" text="Parameter sheet:">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXCheckBox fx:id="templatesReadyCheckBox" disable="true" text="Templates ready">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <Label fx:id="templatesPathLabel" text="Templates path:">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXCheckBox fx:id="movieReadyCheckBox" disable="true" text="Movie ready">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </JFXCheckBox>
+                        <Label fx:id="moviePathLabel" text="Movie path:">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <JFXCheckBox fx:id="autoMode" prefHeight="17.0" prefWidth="105.0" text="Auto mode" />
+                              <JFXCheckBox fx:id="calibratedFramesCB" prefWidth="153.0" text="Use  calibrated frames">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <JFXCheckBox fx:id="filterOutput" text="Filter output" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <effect>
+                        <DropShadow spread="0.3" />
+                     </effect>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="resultBox" prefHeight="483.0" prefWidth="412.0" style="-fx-background-radius: 10px;" styleClass="default-primary-color">
+               <effect>
+                  <DropShadow spread="0.3" />
+               </effect>
+               <children>
+                  <AnchorPane prefHeight="401.0" prefWidth="434.0">
+                     <children>
+                        <JFXListView fx:id="resultsList" editable="true" layoutX="33.0" layoutY="32.0" prefHeight="400.0" prefWidth="335.0" styleClass="default-primary-color" stylesheets="@../assets/results.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <effect>
+                              <DropShadow />
+                           </effect></JFXListView>
+                     </children></AnchorPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow spread="0.5" />
+         </effect>
+      </VBox>
+   </children>
+</Pane>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AlgorithmController">
+   <children>
+      <VBox minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="670.0" styleClass="accent-color" stylesheets="@../assets/style.css">
+         <children>
+            <AnchorPane fx:id="algorithmAnchorPane" prefHeight="500.0" prefWidth="660.0" styleClass="dark-primary-color" stylesheets="@../assets/style.css">
+               <children>
+                  <JFXHamburger fx:id="extendHamburger" layoutX="591.0" layoutY="25.0" AnchorPane.bottomAnchor="443.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="25.0" />
+                  <JFXDrawer fx:id="drawer" defaultDrawerSize="300.0" prefHeight="500.0" prefWidth="0.0" styleClass="default-primary-color" />
+                  <VBox fx:id="originalImageBox" layoutX="45.0" layoutY="52.0" prefHeight="355.0" prefWidth="200.0" styleClass="light-primary-color" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="70.0">
+                     <effect>
+                        <DropShadow spread="0.2" />
+                     </effect>
+                     <children>
+                        <ImageView fx:id="originalImage" fitHeight="360.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <HBox layoutX="60.0" layoutY="439.0" prefHeight="47.0" prefWidth="168.0">
+                     <children>
+                        <JFXButton fx:id="loadImage" onAction="#loadImages" styleClass="accent-color" text=" ">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="previousImage" onAction="#selectPreviousImage" styleClass="accent-color" text=" ">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="nextImage" onAction="#selectNextImage" styleClass="accent-color" text=" ">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="restoreOriginalButton" onAction="#backToOriginal" styleClass="accent-color" text=" ">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <JFXTabPane layoutX="325.0" layoutY="70.0" prefHeight="360.0" prefWidth="306.0" style="-: ;">
+                     <tabs>
+                        <Tab text="Algorithm">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="308.0">
+                                 <children>
+                                    <HBox prefHeight="50.0" prefWidth="200.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                       <children>
+                                          <JFXButton fx:id="findTemplateButton" onAction="#findTemplate" prefHeight="25.0" prefWidth="121.0" styleClass="accent-color" text="FIND TEMPLATE">
+                                             <effect>
+                                                <DropShadow spread="0.28" />
+                                             </effect>
+                                             <HBox.margin>
+                                                <Insets bottom="20.0" left="20.0" top="20.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <VBox prefHeight="37.0" prefWidth="120.0">
+                                             <children>
+                                                <JFXCheckBox fx:id="templateFoundCheckBox" disable="true" text="Template found">
+                                                   <VBox.margin>
+                                                      <Insets top="23.0" />
+                                                   </VBox.margin>
+                                                </JFXCheckBox>
+                                                <Label fx:id="processingTimeLabel" text="Processing time:">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="40.0" top="-5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <AnchorPane fx:id="tuningPane" disable="true" layoutX="17.0" layoutY="95.0" prefHeight="204.0" prefWidth="266.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                       <children>
+                                          <JFXButton layoutX="20.0" layoutY="163.0" onAction="#seekForROI" prefHeight="25.0" prefWidth="115.0" styleClass="accent-color" text="SEEK FOR ROI" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="20.0">
+                                             <effect>
+                                                <DropShadow spread="0.3" />
+                                             </effect>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </JFXButton>
+                                          <VBox layoutX="149.0" layoutY="121.0" prefHeight="47.0" prefWidth="111.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.rightAnchor="20.0">
+                                             <children>
+                                                <JFXCheckBox fx:id="regionReadyCheckBox" disable="true" text="Regions ready" />
+                                                <Label fx:id="roiProcessingTime" text="Processing time:">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="35.0" top="-5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <JFXToggleButton fx:id="adaptiveToggle" layoutX="7.0" layoutY="40.0" onAction="#changeAdaptiveToggleState" text="ADAPTIVE THRESHOLD" toggleColor="#616161" toggleLineColor="#8bc34a" AnchorPane.leftAnchor="0.0" />
+                                          <JFXTextField fx:id="adaptiveBlockSize" alignment="CENTER" disable="true" focusColor="#ff5722" layoutX="198.0" layoutY="56.0" prefHeight="25.0" prefWidth="60.0" promptText="blockSize" text="41" AnchorPane.rightAnchor="20.0" />
+                                          <JFXToggleButton fx:id="gradientToggle" layoutX="7.0" layoutY="1.0" selected="true" text="MORPH. GRADIENT" toggleColor="#616161" toggleLineColor="#8bc34a" AnchorPane.leftAnchor="0.0" />
+                                          <JFXTextField fx:id="gradientDimension" alignment="CENTER" focusColor="#ff5722" layoutX="198.0" layoutY="17.0" prefHeight="20.0" prefWidth="60.0" promptText="w / h" text="2" AnchorPane.rightAnchor="20.0" />
+                                          <JFXTextField fx:id="contourSize" alignment="CENTER" focusColor="#ff5722" layoutX="180.0" layoutY="130.0" prefHeight="25.0" prefWidth="61.0" promptText="min size" text="500" AnchorPane.rightAnchor="20.0" />
+                                          <Text layoutX="20.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minimum contour size:" />
+                                          <Text layoutX="20.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Morph. rectangle dimensions:" />
+                                          <HBox layoutX="135.0" layoutY="95.0" prefHeight="25.0" prefWidth="60.0" AnchorPane.rightAnchor="20.0">
+                                             <children>
+                                                <JFXTextField fx:id="rectangleWidth" alignment="CENTER" focusColor="#ff5724" prefHeight="25.0" prefWidth="20.0" promptText="w" text="5">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="x" wrappingWidth="5.5078125">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </Text>
+                                                <JFXTextField fx:id="rectangleHeight" alignment="CENTER" focusColor="#ff5724" prefHeight="25.0" prefWidth="20.0" promptText="h" text="1">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </JFXTextField>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <Separator layoutX="-115.0" layoutY="93.0" prefHeight="0.0" prefWidth="294.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="OCR">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <JFXListView fx:id="resultList" prefHeight="232.0" prefWidth="266.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                    </JFXListView>
+                                    <HBox fx:id="ocrPanel" disable="true" layoutX="41.0" layoutY="14.0" prefHeight="47.0" prefWidth="266.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                                       <children>
+                                          <JFXButton onAction="#runOCR" prefHeight="25.0" prefWidth="108.0" styleClass="accent-color" text="RUN OCR">
+                                             <effect>
+                                                <DropShadow spread="0.3" />
+                                             </effect>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                          <JFXCheckBox fx:id="filterOutput" text="Filter output">
+                                             <HBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="13.0" />
+                                             </HBox.margin>
+                                          </JFXCheckBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Templates">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane fx:id="gridPane" alignment="CENTER" hgap="10.0" layoutX="10.0" vgap="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
